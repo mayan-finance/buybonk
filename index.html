@@ -309,12 +309,12 @@
         }
         .bonknotif-image-container {
             flex-shrink: 0;
-            width: 100px;
+            width: 90px;
             height: 100%;
             display: flex;
             flex-direction: column-reverse;
             align-items: flex-start;
-            margin-right: 24px;
+            margin-right: 12px;
             overflow: visible;
         }
         .bonknotif-text {
@@ -686,7 +686,7 @@
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
     MayanSwap.setSwapInitiateListener((data) => {
-        const text = `Swap has initiated from ${capitalizeFirstLetter(data.fromChain)} with ${data.fromAmount} ${data.fromToken}`
+        const text = `Swap initiated  ✅ <br />BONK tokens are on the way!`
         if (window.showBonkNotif) {
             window.showBonkNotif(text);
         } else if (Snackbar) {
@@ -697,7 +697,7 @@
         }
     });
     MayanSwap.setSwapCompleteListener((data) => {
-        const text = 'Swap completed';
+        const text = 'Hooray! BONK tokens delivered to your wallet 🐕';
         if (window.showBonkNotif) {
             window.showBonkNotif(text);
         } else if (Snackbar) {
