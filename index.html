@@ -615,7 +615,30 @@
         </a></div>
     </nav>
 </div>
-<div style="width: 100%; margin-top: 140px; margin-bottom: 70px; padding-bottom: 70px; min-height: calc(100vh - 140px); display: flex; align-items: center; justify-content: center">
+<script>
+    function updateWidgetConfig(destChain, tokenContract) {
+			if (window.MayanSwap) {
+				window.MayanSwap.updateConfig({
+                  destinationChains: [destChain],
+                  tokens: { to: {
+                        [destChain]: [tokenContract] }
+                    }
+				});
+            }
+    }
+</script>
+
+
+<div style="width: 100%; margin-top: 140px; margin-bottom: 70px; padding-bottom: 70px; min-height: calc(100vh - 140px); display: flex; align-items: center; justify-content: center; flex-direction: column" >
+    <div style="margin-bottom: 16px" >Update Widget Config</div>
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 300px; margin-bottom: 16px" >
+        <button onclick="updateWidgetConfig('solana', 'Es9vMFrzaCERmJfrF4H2FYD4KCoNkY11McCe8BenwNYB')">
+            Solana-USDT
+        </button>
+        <button onclick="updateWidgetConfig('avalanche', '0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e')">
+            Avalanche-USDC
+        </button>
+    </div>
     <div style="border: 1px solid #664611; border-radius: 12px" id="mayan_widget"></div>
 </div>
 <div class="bonknotif-segment" id="BONKNOTIF_ROOT">
@@ -630,8 +653,8 @@
     <source src="./About_files/Woof.mp3" type="audio/mpeg">
 </audio>
 
-<script src="https://cdn.mayan.finance/widget_ultimate-0-4-5-rw.js"
-        integrity="sha256-4bbx+9eiKWNVRDe2GdBb0vwWFdRvCPfjyaF6XsfWdRs=" crossorigin="anonymous" onload="(function () {
+<script src="https://cdn.mayan.finance/widget_ultimate-0-4-6-rw.js"
+        integrity="sha256-qdvzH4WepCEux9iSMVPw2ouGimY6UGUhMGeiIHaNGR8=" crossorigin="anonymous" onload="(function () {
     MayanSwap.init('mayan_widget', {
     appIdentity: {
       name: 'Buy Bonk',
